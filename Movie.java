@@ -31,21 +31,13 @@ public class Movie {
   public String getTitle (){
       return _title;
   }
-
    public double getCharge(int daysRented){
-
-  return _price.getCharge(daysRented);
+    return _price.getCharge(daysRented);
    }
 
-  public int getFrequentRenterPoints(int daysRented){
-       //Adicionar o trecho de código extraído.
-    //Adicionar o trecho de código extraído.
-    int frequentRenterPoints = 0;
-    // add frequent renter points
-    frequentRenterPoints ++;
-    // add bonus for a two day new release rental
-    if ((getPriceCode() == Movie.NEW_RELEASE) &&
-       daysRented > 1) frequentRenterPoints ++;
-    return frequentRenterPoints;
+ public int getFrequentRenterPoints(int daysRented){
+
+  return _price.getFrequentRenterPoints(daysRented);
+
    }
 }
