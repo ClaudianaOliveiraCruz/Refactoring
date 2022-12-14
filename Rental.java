@@ -11,7 +11,6 @@ public class Rental {
    public Movie getMovie() {
       return _movie;
    }
-
   public double getCharge() {
     double thisAmount = 0;
       //Adicionar o trecho de código extraído.
@@ -31,5 +30,16 @@ public class Rental {
                break;
         }
     return thisAmount;
+   }
+
+  public int getFrequentRenterPoints() { 
+    //Adicionar o trecho de código extraído.
+    int frequentRenterPoints = 0;
+    // add frequent renter points
+    frequentRenterPoints ++;
+    // add bonus for a two day new release rental
+    if ((getMovie().getPriceCode() == Movie.NEW_RELEASE) &&
+       getDaysRented() > 1) frequentRenterPoints ++;
+    return frequentRenterPoints;
    }
 }
